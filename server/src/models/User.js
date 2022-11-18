@@ -35,6 +35,20 @@ class User extends uniqueFunc(Model) {
     };
   }
 
+  static get relationMappings() {
+    const { Coin } = require("./index.js");
+    return {
+      coins: {
+        relation: Model.HasManyRelation,
+        modeClass: Coin,
+        join: {
+          from: "users.id",
+          to: "coins.userId",
+        },
+      },
+    };
+  }
+
   $formatJson(json) {
     const serializedJson = super.$formatJson(json);
 
