@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace z-coins-client build",
+    "dev": "yarn workspace z-coins-server dev",
+    "dev:debug": "yarn workspace z-coins-server dev:debug",
+    "heroku-postbuild": "yarn workspace z-coins-client build",
+    "start": "yarn workspace z-coins-server start",
+    "dev:cypress": "yarn workspace z-coins-server dev:e2e",
+    "e2e:open": "yarn workspace z-coins-e2e e2e:open",
+    "e2e:run": "yarn workspace z-coins-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^14.19"
+  }
+}
